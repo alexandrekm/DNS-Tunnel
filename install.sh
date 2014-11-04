@@ -7,21 +7,9 @@ if [[ $EUID -ne 0 ]]; then
 	exit 1
 fi
 
-# Check Arguments
-if [ -z "$1" ]; then
-	echo "No configuration URL supplied."
-	exit 1
-fi
-
-# Check Configuration URL
-#if ! curl -f -I -o /dev/null -s --head "$1"; then
-#	echo "Invalid configuration URL supplied."
-#	exit 1
-#fi
-
 # Configuration Variables
 CONFIGURATION_DIR=/etc/dnstun
-CONFIGURATION_URL="$1"
+CONFIGURATION_URL="https://gist.githubusercontent.com/alexandrekm/42d695c5f3ffb697df23/raw"
 DEBIAN_FRONTEND=noninteractive
 SNIPROXY_VERSION=0.3.5
 
@@ -104,9 +92,9 @@ apt-get -q -y install dnsmasq
 ################
 
 # Download
-wget -O /etc/rc.local https://raw.githubusercontent.com/maxexcloo/DNS-Tunnel/master/conf/rc.local
-wget -O /usr/local/bin/dnstun https://raw.githubusercontent.com/maxexcloo/DNS-Tunnel/master/dnstun
-wget -O /usr/local/bin/dnstun-init https://raw.githubusercontent.com/maxexcloo/DNS-Tunnel/master/dnstun-init
+wget -O /etc/rc.local https://raw.githubusercontent.com/alexandrekm/DNS-Tunnel/master/conf/rc.local
+wget -O /usr/local/bin/dnstun https://raw.githubusercontent.com/alexandrekm/DNS-Tunnel/master/dnstun
+wget -O /usr/local/bin/dnstun-init https://raw.githubusercontent.com/alexandrekm/DNS-Tunnel/master/dnstun-init
 
 # Set Permissions
 chmod +x /usr/local/bin/dnstun /usr/local/bin/dnstun-init
