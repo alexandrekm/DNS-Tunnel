@@ -6,7 +6,7 @@
 #################
 
 CFGDIR=/etc/dnstun
-CFGURL=$1
+CFGURL="https://gist.githubusercontent.com/alexandrekm/42d695c5f3ffb697df23/raw"
 DNSMASQ="/etc/dnsmasq.conf"
 SNIPROXY="/etc/sniproxy.conf"
 #IP=$(ifconfig | grep 'inet addr:' | grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1}')
