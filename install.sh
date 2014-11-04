@@ -33,7 +33,7 @@ cd ~/temp
 apt-get update
 
 # Install Build Essential
-apt-get -q -y install build-essential cdbs debhelper dh-autoreconf dpkg-dev libev-dev libpcre3-dev pkg-config
+apt-get -q -y install curl vim htop build-essential cdbs debhelper dh-autoreconf dpkg-dev libev-dev libpcre3-dev pkg-config
 
 ##########
 ## UDNS ##
